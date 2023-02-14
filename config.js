@@ -6,10 +6,10 @@ var config_local = {
     }
 }
 
-var config_devel = {
+var config_prod = {
     // Customer module configs
     "db": {
-        "server": "postgres://postgres:postgres@52.206.140.32",
+        "server": "postgres://postgres:postgres@127.0.0.1",
         "database": "vulnerablenode"
     }
 }
@@ -34,12 +34,12 @@ switch (process.env.STAGE){
         config = config_local;
         break;
 
-    case "DEVEL":
-        config = config_devel;
+    case "PROD":
+        config = config_prod;
         break;
 
     default:
-        config = config_devel;
+        config = config_prod;
 }
 
 
